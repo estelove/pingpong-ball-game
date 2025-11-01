@@ -42,6 +42,9 @@ font,init()
 font = font.Font(None, 35)
 lose1 = font.render('PLAYER 1 LOSE!',True, (180,0,0))
 lose2= font.render('PLAYER 2 LOSE!',True, (180,0,0))
+speed_x = 3
+speed_y = 3
+speed =  3
 
 while game:
     for e in event.get():
@@ -67,7 +70,7 @@ while game:
             speed_y *= 1
         
         if ball.rect.y > win_height-50 or ball.rect.y <0:
-            speed *= -1
+            speed_y *= -1
 
         if ball.rect.x < 0:
             finish = True
@@ -84,5 +87,4 @@ while game:
         racket2.reset()
         ball.reset()
 
-    display.update()
-    clock.tick(FPS)
+
